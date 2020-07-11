@@ -1,8 +1,4 @@
----
-title: "CodeBook"
-output: html_document
----
-
+#Code Book
 
 The script run_analysis.R does the following:
 
