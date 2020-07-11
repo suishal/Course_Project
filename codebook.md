@@ -1,34 +1,17 @@
-# Code Book
+# Code book
+## Feature Selection 
 
-The script run_analysis.R does the following:
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals Time Accelerometer-XYZ and Time Gyroscope-XYZ. These time domain signals (prefix 'Time' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (Body Accelerometer and Gyroscope) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
-### 0.Download the Raw data
-Download the data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip and unzip it
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (Time Body Gyroscope Jerk-XYZ and Time Body Accelerometer Jerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (Magnitude). 
 
-Read the train dataset and test dataset:
-x_train: the 561 variables of 7352 subjects.
-x_test: the 561 variables of 2947 subjects.
-y_train: the activity label of 7352 subjects.
-y_test: the activity label of 2947 subjects.
-sub_train: the identifier of the subject who carried out the experiment in train dataset (n=7352).
-sub_test: the identifier of the subject who carried out the experiment in test dataset (n=2947).
+Finally a Fast Fourier Transform (FFT) was applied to some of signals producing (Note the 'Frequency' to indicate frequency domain signals). 
 
-### 1.Merges the training and the test sets to create one data set.
-Name the variables in x according the features.txt. 
-Give the colname to y and sub.
-Merge all the data into dataset.
-
-### 2.Extracts only the measurements on the mean and standard deviation for each measurement.
-Extract the colname contain "mean" and "std" from x dataset.
-
-### 3.Uses descriptive activity names to name the activities in the data set
-Describe the activity according activity_labels.txt.
-
-### 4.Appropriately labels the data set with descriptive variable names.
-Change the colname of dataset according features_info.txt
-
-### 5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-Group the data according subject and activity, then summary the average.
-And save the tidy data as tidy_dataset.txt
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
 
+The set of variables that were estimated from these signals are: 
+
+mean(): Mean value
+std(): Standard deviation
