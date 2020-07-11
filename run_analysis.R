@@ -75,4 +75,4 @@ colnames(dataset.select)[2] <- "activity_labels"
 tidy_dataset <- dataset.select %>%
         group_by(subject, activity) %>%
         summarise_all(funs(mean))
-write.table(x = tidy_dataset, file = "tidy_dataset.txt", quote = FALSE, row.names = FALSE)
+write.table(x = tidy_dataset, file = "tidy_dataset.txt", row.names = FALSE)
